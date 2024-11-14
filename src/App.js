@@ -3,9 +3,9 @@ import './App.css';
 
 function App() {
   const [todos, setTodos] = useState([
-    { id: 1, text: 'Вивчити React' },
-    { id: 2, text: 'Зробити домашнє завдання' },
-    { id: 3, text: 'Прочитати книгу' }
+    { id: 1, text: 'Learn Spanish' },
+    { id: 2, text: 'Do homework' },
+    { id: 3, text: 'Read 3 pages of the book' }
   ]);
   const [newTodo, setNewTodo] = useState('');
 
@@ -22,21 +22,21 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Список справ</h1>
+      <h1>Things to DO</h1>
       <div className="todo-input">
         <input
           type="text"
           value={newTodo}
           onChange={(e) => setNewTodo(e.target.value)}
-          placeholder="Додати нове завдання"
+          placeholder="Add new task"
         />
-        <button onClick={handleAddTodo}>Додати</button>
+        <button onClick={handleAddTodo}>Add</button>
       </div>
       <ul>
         {todos.map(todo => (
           <li key={todo.id}>
             {todo.text}
-            <button onClick={() => handleDeleteTodo(todo.id)}>Видалити</button>
+            <button onClick={() => handleDeleteTodo(todo.id)}>Delete</button>
           </li>
         ))}
       </ul>
